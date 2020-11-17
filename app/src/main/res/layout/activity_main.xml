@@ -84,23 +84,24 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="abbrechenClicked"
-        android:text="Abbrechen"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/mat_dob_field"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:id="@+id/textButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="142dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:onClick="weiterClicked"
-        android:text="Weiter"
-        app:layout_constraintEnd_toEndOf="@+id/mat_dob_field"
+        android:text="Anmelden"
+        app:icon="@drawable/ic_assignment_ind_black_24dp"
+        app:layout_constraintStart_toStartOf="@+id/mat_dob_field"
         app:layout_constraintTop_toBottomOf="@+id/mat_dob_field" />
+
+    <Button
+        android:id="@+id/textButton2"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        android:text="Abbrechen"
+        app:layout_constraintEnd_toEndOf="@+id/mat_dob_field"
+        app:layout_constraintStart_toEndOf="@+id/textButton"
+        app:layout_constraintTop_toTopOf="@+id/textButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
