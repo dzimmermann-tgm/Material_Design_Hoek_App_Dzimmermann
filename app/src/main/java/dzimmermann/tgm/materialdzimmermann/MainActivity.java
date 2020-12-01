@@ -1,12 +1,16 @@
 package dzimmermann.tgm.materialdzimmermann;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private TextInputLayout name;
     private TextInputLayout address;
     private TextInputLayout dob;
+    private BottomNavigationView bnv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,30 @@ public class MainActivity extends AppCompatActivity {
         this.name = (TextInputLayout)findViewById(R.id.mat_name_field);
         this.address = (TextInputLayout)findViewById(R.id.mat_address_field);
         this.dob = (TextInputLayout)findViewById(R.id.mat_dob_field);
+
+        final Object that = this;
+
+        this.bnv =  ((BottomNavigationView) findViewById(R.id.bottom_navigation));
+        bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if(item.getItemId() == R.id.page_1) {
+                    Toast.makeText((MainActivity)that, "Hello there master kenobi", Toast.LENGTH_SHORT).show();
+                    pfuschAmBau(item);
+                } else if(item.getItemId() == R.id.page_2) {
+                    Toast.makeText((MainActivity)that, "Something else", Toast.LENGTH_SHORT).show();
+                } else if(item.getItemId() == R.id.page_3) {
+                    Toast.makeText((MainActivity)that, "Something else again", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });
+    }
+
+    public void pfuschAmBau(MenuItem item) {
+        BadgeDrawable bd = bnv.getOrCreateBadge(item.getItemId());
+        bd.setVisible(true);
+        bd.setNumber(101);
     }
 
     public void abbrechenClicked(View v) {

@@ -88,7 +88,7 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50dp"
         android:text="Anmelden"
         app:icon="@drawable/ic_assignment_ind_black_24dp"
         app:layout_constraintStart_toStartOf="@+id/mat_dob_field"
@@ -109,7 +109,7 @@
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -119,15 +119,23 @@
             style="@style/Widget.App.Button.OutlinedButton.IconOnly"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:icon="@drawable/human_male" />
+            app:icon="@drawable/male_icon" />
 
         <Button
             android:id="@+id/button2"
             style="@style/Widget.App.Button.OutlinedButton.IconOnly"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:icon="@drawable/human_female" />
+            app:icon="@drawable/female_icon" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/my_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
